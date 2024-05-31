@@ -1,0 +1,22 @@
+{
+    "python.analysis.typeCheckingMode": "basic",
+    "mypy.enabled": true,
+    "flake8.args": [
+        "--max-line-length=120",
+        "--ignore=E203,E501,W503"
+    ],
+    "pylint.args": [
+        "--max-line-length=120",
+    ],
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.black-formatter",
+        "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": "explicit"
+        },
+    },
+    "isort.args": [
+        "--profile",
+        "black"
+    ],
+}

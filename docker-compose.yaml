@@ -1,0 +1,38 @@
+version: '3.8'
+
+services:
+  db:
+    image: mysql:8.0
+    container_name: demobotrista-db
+    volumes:
+      - mysql-data:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: mydatabase
+      MYSQL_USER: user
+      MYSQL_PASSWORD: password
+    ports:
+      - "3306:3306"
+
+  web:
+    build: .
+    container_name: demobotrista-web
+    environment:
+      - DJANGO_ENV=local
+    volumes:
+      - .:/app
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+      - cache
+
+  cache:
+    image: redis:latest
+    container_name: demobotrista-cache
+    volumes:
+      - redis-data:/data
+
+volumes:
+  mysql-data:
+  redis-data:

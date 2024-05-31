@@ -1,0 +1,7 @@
+Django
+djangorestframework
+djangorestframework-simplejwt
+mysqlclient
+redis
+django-redis
+django-environ
