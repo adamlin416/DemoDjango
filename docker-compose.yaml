@@ -11,6 +11,8 @@ services:
       MYSQL_DATABASE: mydatabase
       MYSQL_USER: user
       MYSQL_PASSWORD: password
+    env_file:
+      - .env.local
     ports:
       - "3306:3306"
 

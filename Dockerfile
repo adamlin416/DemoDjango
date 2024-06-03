@@ -13,5 +13,8 @@ USER appuser
 
 EXPOSE 8000
 
-CMD ["./wait-for-it.sh", "db:3306", "--", "python", "./demobotrista/manage.py", "runserver", "0.0.0.0:8000"]
+ENTRYPOINT ["./entrypoint.sh"]
+
+# CMD ["./wait-for-it.sh", "db:3306", "--", "python", "./demobotrista/manage.py", "runserver", "0.0.0.0:8000"]
+CMD ["python", "./demobotrista/manage.py", "runserver", "0.0.0.0:8000"]
 # CMD ["tail", "-f", "/dev/null"]
