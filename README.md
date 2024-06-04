@@ -58,6 +58,10 @@ All operations(except for user create) requiring authentication are protected us
 
 # TODOs
 In a production environment, I would generally implement the following features and tools:  
+
+**Schema Design**:
+  - Think of bussiness requirement. For example, for some system need searches across multiple databases, add a globally unique identifier like user_id with UUID, so id+user_id composite key ensures each entity remains unique across different databases.  
+
 **Logging and Monitoring**:  
   - Logging collection using ELK Stack or a cloud-based solution.
   - Monitoring indices with Prometheus and Grafana or other similar tools.
